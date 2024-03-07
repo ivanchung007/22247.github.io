@@ -1,359 +1,369 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="zh-cn">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>2OT.CN - 一个纯粹的工具类网站</title>
-	<!--[if lt IE 9]>
-		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<script src="Javascript/Flot/excanvas.js"></script>
-	<![endif]-->
-	<!-- The Fonts -->
-	<link href="http://fonts.googleapis.com/css?family=Oswald|Droid+Sans:400,700" rel="stylesheet" />
-	<!-- The Main CSS File -->
-	<link rel="stylesheet" href="CSS/style.css" />
-	<!-- jQuery -->
-	<script src="Javascript/jQuery/jquery-1.7.2.min.js"></script>
-	<!-- Flot -->
-	<script src="Javascript/Flot/jquery.flot.js"></script>
-	<script src="Javascript/Flot/jquery.flot.resize.js"></script>
-	<script src="Javascript/Flot/jquery.flot.pie.js"></script>
-	<!-- DataTables -->
-	<script src="Javascript/DataTables/jquery.dataTables.min.js"></script>
-	<!-- ColResizable -->
-	<script src="Javascript/ColResizable/colResizable-1.3.js"></script>
-	<!-- jQuryUI -->
-	<script src="Javascript/jQueryUI/jquery-ui-1.8.21.min.js"></script>
-	<!-- Uniform -->
-	<script src="Javascript/Uniform/jquery.uniform.js"></script>
-	<!-- Tipsy -->
-	<script src="Javascript/Tipsy/jquery.tipsy.js"></script>
-	<!-- Elastic -->
-	<script src="Javascript/Elastic/jquery.elastic.js"></script>
-	<!-- ColorPicker -->
-	<script src="Javascript/ColorPicker/colorpicker.js"></script>
-	<!-- SuperTextarea -->
-	<script src="Javascript/SuperTextarea/jquery.supertextarea.min.js"></script>
-	<!-- UISpinner -->
-	<script src="Javascript/UISpinner/ui.spinner.js"></script>
-	<!-- MaskedInput -->
-	<script src="Javascript/MaskedInput/jquery.maskedinput-1.3.js"></script>
-	<!-- ClEditor -->
-	<script src="Javascript/ClEditor/jquery.cleditor.js"></script>
-	<!-- Full Calendar -->
-	<script src="Javascript/FullCalendar/fullcalendar.js"></script>
-	<!-- Color Box -->
-	<script src="Javascript/ColorBox/jquery.colorbox.js"></script>
-	<!-- Kanrisha Script -->
-	<script src="Javascript/kanrisha.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>WebOS</title>
+    <link rel='Shortcut Icon' type='image/x-icon' href='./img/windows.ico'>
+    <script type="text/javascript" src="./js/jquery-2.2.4.min.js"></script>
+    <link href="./css/animate.css" rel="stylesheet">
+    <script type="text/javascript" src="./component/layer-v3.0.3/layer/layer.js"></script>
+    <link rel="stylesheet" href="./component/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="./css/default.css" rel="stylesheet">
+    <script type="text/javascript" src="./js/win10.js"></script>
+    <link href="./plugins/drawer/shortcut-drawer.min.css" rel="stylesheet">
+    <script type="text/javascript" src="./plugins/drawer/shortcut-drawer.min.js"></script>	
+	<style>
+        * {
+            font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu
+        }
+        /*磁贴自定义样式*/
+        .win10-block-content-text {
+            line-height: 44px;
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        Win10.onReady(function () {
+
+            //设置壁纸
+            Win10.setBgUrl({
+                main:'https://unsplash.it/1920/1080/?random',
+                mobile:'https://unsplash.it/1125/2436/?random',
+            });
+
+            Win10.setAnimated([
+                'animated flip',
+                'animated bounceIn',
+            ], 0.01);
+            
+            setTimeout(function () {
+                Win10.newMsg('Donate~', 'Scan the QR code to buy me a drink ^_^</br></br> <img src="./img/presentation/donation.png" style="width: 60%; top:800;" />')
+            }, 2500);
+
+            setTimeout(function () {
+                Win10.newMsg('Welcome~', '<a target="_blank" style="color:inherit" href="https://shang.qq.com/wpa/qunwpa?idkey=66f37313bf5f5927bde166d846a2ecccdc50b85f6e9ac5e6435ecf66ec2b6843">[Click me] Or Scan the QR code to join in QQGroup </br></br> <img src="./img/code.png" style="width: 50%; top:800;" /></a>')
+            }, 2500);
+
+
+        });
+
+        //该函数可删除 Orz
+        function win10_forgive_me() {
+            Win10.enableFullScreen();
+            layer.alert('Hello Visitor, You dont know me but I know </br>you, I want to play a game.', {}, function(index){
+                var blue=$('<img src="./img/presentation/bluescreen.jpg" style="position: fixed;width: 100%;height:100%;top:0;z-index:9999999999" />');
+                setTimeout(function () {
+                    $('body').append(blue);
+                },3000);
+                setTimeout(function () {
+                    blue.remove();
+                    Win10.disableFullScreen();
+                    setTimeout(function () {
+                        layer.msg('Congratulations. You are still alive. Most people are so ungrateful to be alive. But not you. Not anymore.');
+
+                    },1000);
+                },9000);
+                layer.close(index);
+            });
+
+        }
+    </script>
+	
+</head>
 <body>
-	<!-- Change Pattern -->
-	<div class="changePattern">
-		<span id="pattern1"></span>
-		<span id="pattern2"></span>
-		<span id="pattern3"></span>
-		<span id="pattern4"></span>
-		<span id="pattern5"></span>
-		<span id="pattern6"></span>
-	</div>
-	<!-- Top Panel -->
-	<div class="top_panel">
-		<div class="wrapper">
-			
-			<div class="top_links">
-				<ul>
-				
-					<li class="i_22_charts">
-						<a href="https://www.speedtest.cn/" target="_blank" title="测速">
-							<span class="label">测速</span>
-						</a>
-					</li>
-					<li class="i_22_upload">
-						<a href="#" title="Upload">
-							<span class="label">Upload</span>
-						</a>
-						<!-- Drop Menu -->
-						<ul class="drop_menu menu_with_icons right_direction">
-							<li>
-								<a class="i_16_add" href="https://www.weiyun.com/" target="_blank" title="New Flie">
-									<span class="label">微云</span>
-								</a>									
-							</li>
-							<li>
-								<a class="i_16_progress" href="https://up.woozooo.com/account.php?action=login&ref=/mydisk.php" target="_blank" title="2 Files Left">
-									<span class="label">蓝凑</span>
-									<span class="small_count">2</span>
-								</a>
-							</li>
-							<li>
-								<a class="i_16_files" href="https://www.aliyundrive.com/sign/in" target="_blank" title="Browse Files">
-									<span class="label">阿里</span>
-								</a>
-							</li>
-						</ul>
-					</li>
-					<li class="i_22_settings">
-						<a href="https://www.ipaddress.com/" target="_blank" title="IP地址">
-							<span class="label lasCount">Ipaddress</span>
-							
-						</a>
-					</li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-
-	<header class="main_header">
-        <div class="wrapper">
-			<div class="logo">
-				<a href="#" title="一个纯粹的工具类网站">
-					<img src="Images/logo.png" alt="kanrisha_logo" />
-				</a>
-			</div>
-			<nav class="top_buttons">
-				<ul>
-					<li class="big_button">
-						<div class="out_border">
-							<div class="button_wrapper">
-								<div class="in_border">
-									<a href="http://www.zmmap.com/" target="_blank" title="芝麻导航" class="the_button">
-										<span class="i_32_statistic"></span>
-									</a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="big_button">
-						
-						<div class="out_border">
-							<div class="button_wrapper">
-								<div class="in_border">
-									<a href="https://wx.qq.com/" target="_blank" title="微信网页版" class="the_button">
-										<span class="i_32_support"></span>
-									</a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="big_button">
-						<div class="big_count">
-							<span>1</span>
-						</div>
-						<div class="out_border">
-							<div class="button_wrapper">
-								<div class="in_border">
-									<a href="http://2ot.cn/Images/meituan.jpg" title="美团优惠券" target="_blank" class="the_button">
-										<span class="i_32_delivery"></span>
-									</a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="big_button">
-						<div class="out_border">
-
-								       <div class="widget_contents lPreview">
-									<a href="http://2ot.cn/pay.jpg" title="感谢打赏" class="lightbox">
-										<img src="Images/Icons/32/i_32_dollar.png" alt="lightbox"/></a>	
-										</div>
-						</div>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-
-	<div class="wrapper small_menu">
-		<ul class="menu_small_buttons">
-			<li><a title="General Info" class="i_22_dashboard smActive" href="index.html"></a></li>
-			<li><a title="Your Messages" class="i_22_inbox" href="soft.html"></a></li>
-			<li><a title="Some Rows" class="i_22_tables" href="msdn.html"></a></li>
-			
-		</ul>
-	</div>
-
-	<div class="wrapper contents_wrapper">
+<div id="win10">
+    <div class="desktop">
+        <div id="win10-shortcuts" class="shortcuts-hidden">
 		
-		<aside class="sidebar">
-			<ul class="tab_nav">
-				<li class="active_tab i_32_dashboard">
-					<a href="index.html" title="General Info">
-						<span class="tab_label">首页</span>
-						<span class="tab_info">Index</span>
-					</a>
-				</li>
-				<li class="i_32_inbox">
-					<a href="soft.html" title="Your Messages">
-						<span class="tab_label">SOFT</span>
-						<span class="tab_info">一些软件</span>
-					</a>
-				</li>
-				<li class="i_32_tables">
-					<a href="msdn.html" title="Some Rows">
-						<span class="tab_label">MSDN</span>
-						<span class="tab_info">源自官方原版</span>
-					</a>
-				</li>
+<div class="shortcut" onClick="window.open('https://wwp.lanzoue.com/ignZM09big2h','<img class=\'icon\' src=\'./img/icons/imageres_177.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/SunloginClient.jpg"/>
+                <div class="title">向日葵64</div>
+            </div>
+			<div class="shortcut" onClick="window.open('https://hao.360.com/?src=lm&ls=n0715a3cb9e','<img class=\'icon\' src=\'./img/icons/imageres_177.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/imageres_177.ico"/>
+                <div class="title">360导航</div>
+            </div>
+<div class="shortcut" onClick="window.open('https://www.2345.com/?k397071','<img class=\'icon\' src=\'./img/icons/imageres_177.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/imageres_177.ico"/>
+                <div class="title">2345导航</div>
+            </div>
+<div class="shortcut" onClick="window.open('https://wwa.lanzoui.com/iiXCEzw3x4h','<img class=\'icon\' src=\'./img/icons/imageres_82.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/imageres_184.ico"/>
+                <div class="title">HEU_KMS</div>
+            </div>
+            <div class="shortcut" onClick="Win10.openUrl('./file','<img class=\'icon\' src=\'./img/icons/imageres_123.ico\'/>Administrator')">
+                <img class="icon" src="./img/icons/imageres_123.ico"/>
+                <div class="title">Administrator</div>
+            </div>
+            <div class="shortcut" onClick="Win10.openUrl('https://www.9366333.cn:2017','<img class=\'icon\' src=\'./img/icons/imageres_25.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/imageres_25.ico"/>
+                <div class="title">NetWork</div>
+            </div>		
+			<div class="shortcut" onClick="window.open('https://up.woozooo.com/account.php?action=login&ref=/mydisk.php','<img class=\'icon\' src=\'./img/icons/imageres_1404.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/imageres_1404.ico"/>
+                <div class="title">蓝奏云</div>
+            </div>
+			<div class="shortcut" onClick="window.open('https://www.weiyun.com','<img class=\'icon\' src=\'./img/icons/yunpan.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/yunpan.ico"/>
+                <div class="title">微云</div>
+            </div>
+			<div class="shortcut" onClick="window.open('https://www.aliyundrive.com/sign/in','<img class=\'icon\' src=\'./img/icons/yunpan.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/yunpan.ico"/>
+                <div class="title">阿里云盘</div>
+            </div>
+			<div class="shortcut" onClick="window.open('https://down.52pojie.cn/Tools/','<img class=\'icon\' src=\'./img/icons/imageres_107.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/imageres_107.ico"/>
+                <div class="title">工具包</div>
+            </div>
+			<div class="shortcut" onClick="window.open('https://msdn.itellyou.cn/','<img class=\'icon\' src=\'./img/icons/imageres_38.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/imageres_38.ico"/>
+                <div class="title">MSDN</div>
+            </div>
+			<div class="shortcut" onClick="window.open('https://i.csdn.net/','<img class=\'icon\' src=\'./img/icons/imageres_SHIDI_SHIELD_INTERNAL.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/imageres_SHIDI_SHIELD_INTERNAL.ico"/>
+                <div class="title">CSDN</div>
+            </div>
+			<div class="shortcut" onClick="window.open('https://www.52pojie.cn','<img class=\'icon\' src=\'./img/icons/imageres_82.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/imageres_82.ico"/>
+                <div class="title">52POJIE</div>
+            </div>
+				<div class="shortcut" onClick="window.open('http://www.speedtest.cn/','<img class=\'icon\' src=\'./img/icons/imageres_144.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/imageres_144.ico"/>
+                <div class="title">测速</div>
+            </div>
+			<div class="shortcut" onClick="window.open('http://internet.gd.chinamobile.com/','<img class=\'icon\' src=\'./img/icons/imageres_144.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/imageres_144.ico"/>
+                <div class="title">移动测速</div>
+            </div>
+				<div class="shortcut" onClick="window.open('http://www.zmmap.com/','<img class=\'icon\' src=\'./img/icons/imageres_1024.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/imageres_1024.ico"/>
+                <div class="title">芝麻导航</div>
+            </div>
 				
-			</ul>
-		</aside>
-
-		<div class="contents">
-			<div class="grid_wrapper">
-
-				<div class="g_6 contents_header">
-					<h3 class="i_16_dashboard tab_label">用前注意：</h3>
-					<div><span class="label">本站仅为个人性质的网络工具和原版软件信息收录站点。本站不保证所提供软件的完整性和安全性，请在使用前查毒。
-</span></div>
-				</div>
-				<div class="g_6 contents_options">
-					<div class="simple_buttons">
-						<div class="bwIcon i_16_help"><a href="sm.html" target="_blank"><span class="label">说明</span></a></div>
-					</div>
-
+				<div class="shortcut" onClick="window.open('https://wwa.lanzoui.com/b00zv78he','<img class=\'icon\' src=\'./img/icons/imageres_109.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/imageres_109.ico"/>
+                <div class="title">装机</div>
+            </div>
+				<div class="shortcut" onClick="window.open('https://wwa.lanzoui.com/b0100vpfi','<img class=\'icon\' src=\'./img/icons/imageres_109.ico\'/>WrokGroup')">
+                <img class="icon" src="./img/icons/imageres_184.ico"/>
+                <div class="title">创现</div>
+            </div>
+		
+             <div class="shortcut win10-drawer">
+                <img class="icon" src="./img/icons/imageres_184.ico"/>
+                <div class="title">Download</div>
+                <div class="win10-drawer-box">
+                    <div class="shortcut-drawer" onClick="window.open('http://dm.weishi.360.cn/home.html','WrokGroup')">
+                        <img class="icon" src="https://p1.ssl.qhimg.com/t01142a5003c283acb5.png"/>
+                        <div class="title">360驱动</div>
+                    </div>
+					<div class="shortcut-drawer" onClick="window.open('http://urlqh.cn/n0D6O','WrokGroup')">
+                        <img class="icon" src="https://p5.ssl.qhimg.com/t018cd3d0fc6cd1793f.png"/>
+                        <div class="title">360压缩</div>
+                    </div>
+                     <div class="shortcut-drawer" onClick="window.open('https://pc.weixin.qq.com/','WrokGroup')">
+                        <img class="icon" src="https://pc3.gtimg.com/softmgr/logo/48/11488_48_1616464914.png"/>
+                        <div class="title">微信PC</div>
+                    </div>
+					 <div class="shortcut-drawer" onClick="window.open('https://im.qq.com/pcqq/','WrokGroup')">
+                        <img class="icon" src="https://pc3.gtimg.com/softmgr/logo/48/2_48_1482283025.png"/>
+                        <div class="title">QQ</div>
+                    </div>
+					 <div class="shortcut-drawer" onClick="window.open('http://qq.pinyin.cn/','WrokGroup')">
+                        <img class="icon" src="https://pc3.gtimg.com/softmgr/logo/48/7_48_1458184328.png"/>
+                        <div class="title">QQ拼音</div>
+                    </div>
+					 <div class="shortcut-drawer" onClick="window.open('https://v.qq.com/download.html#Windows','WrokGroup')">
+                        <img class="icon" src="./img/icons/imageres_184.ico"/>
+                        <div class="title">腾讯视频</div>
+                    </div>
+					 <div class="shortcut-drawer" onClick="window.open('https://player.qq.com/','WrokGroup')">
+                        <img class="icon" src="https://pc3.gtimg.com/softmgr/logo/48/8_48_1560156252.png"/>
+                        <div class="title">QQ影音</div>
+                    </div>
+					 <div class="shortcut-drawer" onClick="window.open('https://pinyin.sogou.com/','WrokGroup')">
+                        <img class="icon" src="https://pc3.gtimg.com/softmgr/logo/48/12489_48_1470986051.png"/>
+                        <div class="title">搜狗输入法</div>
+                    </div>
+					<div class="shortcut-drawer" onClick="window.open('https://www.huorong.cn/','WrokGroup')">
+                        <img class="icon" src="https://bbs.huorong.cn/data/attachment/common/09/common_59_icon.png"/>
+                        <div class="title">火绒</div>
+                    </div>
+					<div class="shortcut-drawer" onClick="window.open('http://www.firefox.com.cn/','WrokGroup')">
+                        <img class="icon" src="./img/icons/imageres_184.ico"/>
+                        <div class="title">火狐浏览器</div>
+                    </div>
+					<div class="shortcut-drawer" onClick="window.open('http://urlqh.cn/n262E','WrokGroup')">
+                        <img class="icon" src="https://p1.ssl.qhimg.com/t01295f3bb119d3e1c2.png"/>
+                        <div class="title">360极速</div>
+                    </div>
+					<div class="shortcut-drawer" onClick="window.open('http://urlqh.cn/n2Pl9','WrokGroup')">
+                        <img class="icon" src="https://p4.ssl.qhimg.com/t01d2f6ee87646ab99f.png"/>
+                        <div class="title">安全浏览器</div>
+                    </div>
+					<div class="shortcut-drawer" onClick="window.open('https://www.google.cn/chrome/','WrokGroup')">
+                        <img class="icon" src="https://pc3.gtimg.com/softmgr/logo/48/302_48_1450768888.png"/>
+                        <div class="title">G浏览器</div>
+                    </div>
+					<div class="shortcut-drawer" onClick="window.open('http://www.bfgho.com/','WrokGroup')">
+                        <img class="icon" src="./img/icons/imageres_184.ico"/>
+                        <div class="title">冰封</div>
+                    </div>
+					<div class="shortcut-drawer" onClick="window.open('http://www.yjhyjl.com/','WrokGroup')">
+                        <img class="icon" src="./img/icons/imageres_184.ico"/>
+                        <div class="title">GHOST</div>
+                    </div>
+						<div class="shortcut-drawer" onClick="window.open('http://www.feiq18.com/','WrokGroup')">
+                        <img class="icon" src="https://2ot.cn/feiqiu.png"/>
+                        <div class="title">飞秋</div>
+                    </div>
+						<div class="shortcut-drawer" onClick="window.open('https://pgy.oray.com/download/','WrokGroup')">
+                        <img class="icon" src="./img/icons/imageres_184.ico"/>
+                        <div class="title">蒲公英</div>
+                    </div>
+						<div class="shortcut-drawer" onClick="window.open('https://sunlogin.oray.com/download/','WrokGroup')">
+                        <img class="icon" src="./img/icons/imageres_184.ico"/>
+                        <div class="title">向日葵</div>
+                    </div>
+					<div class="shortcut-drawer" onClick="window.open('https://yzy.gdzwfw.gov.cn/download.html','WrokGroup')">
+                        <img class="icon" src="https://2ot.cn/Images/1/yzy.png"/>
+                        <div class="title">粤政易</div>
+                    </div>
+					<div class="shortcut-drawer" onClick="window.open('https://www.aliyundrive.com/s/SqkbzfuvNFR','WrokGroup')">
+                        <img class="icon" src="./img/icons/imageres_184.ico"/>
+                        <div class="title">2345集合</div>
+                    </div>
+					<div class="shortcut-drawer" onClick="window.open('https://www.aliyundrive.com/s/STL8G2mFYoc','WrokGroup')">
+                        <img class="icon" src="./img/icons/imageres_184.ico"/>
+                        <div class="title">360集合</div>
+                    </div>
+                 </div>
+            </div>	 
 			
-				</div>
-				<div class="g_12 separator"><span></span></div>
 			
-							<div class="g_12" id="table_wTabs">
-					<div class="widget_header wwOptions">
-						<h4 class="widget_header_title wwIcon i_16_tabs">官方下载</h4>
-						<ul class="w_Tabs">
-							<li><a href="#table_wTabs-1" title="推荐软件">推荐软件</a></li>
-							<li><a href="#table_wTabs-2" title="">其他</a></li>
-						</ul>
-					</div>
-					<div class="widget_contents">
-						<div id="table_wTabs-1">
-						<div class="widget_contents iphO">
-						<div class="iPreview" align="center"><a href="https://sunlogin.oray.com/download/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/26760_48_1602817243.png" alt="icon" width="40" height="40" />  <span class="label">向日葵</span></a></div>
-						<div class="iPreview" align="center"><a href="https://pc.weixin.qq.com/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/11488_48_1616464914.png" alt="icon" width="40" height="40" />  <span class="label">微信</span></a></div>
-						<div class="iPreview">
-						<div align="center"><a href="https://im.qq.com/pcqq" target="_blank">
-				                <img src="https://pc3.gtimg.com/softmgr/logo/48/2_48_1482283025.png" alt="icon" width="40" height="40" />  <span class="label">QQ</span></a></div>
-						</div>
-						<div class="iPreview" align="center"><a href="http://qq.pinyin.cn/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/7_48_1458184328.png" alt="icon" width="40" height="40" />  <span class="label">QQ拼音</span></a></div>
-						<div class="iPreview" align="center"><a href="https://pinyin.sogou.com/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/12489_48_1470986051.png" alt="icon" width="40" height="40" />  <span class="label">搜狗拼音</span></a></div>
-						<div class="iPreview" align="center"><a href="https://www.google.cn/chrome/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/302_48_1450768888.png" alt="icon" width="40" height="40" />  <span class="label">GOOGLE</span></a></div>
-						<div class="iPreview" align="center"><a href="https://player.qq.com/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/8_48_1560156252.png" alt="icon" width="40" height="40" />  <span class="label">QQ影音</span></a></div>
-						<div class="iPreview" align="center"><a href="https://jisupdf.com/zh-cn/download.html" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/56561_48_1452482377.png" alt="icon" width="40" height="40" />  <span class="label">极速PDF</span></a></div>
-						<div class="iPreview" align="center"><a href="https://www.wps.cn/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/1215_48_1616120568.png" alt="icon" width="40" height="40" />  <span class="label">WPS</span></a></div>
-						<div class="iPreview" align="center"><a href="https://www.foxitsoftware.cn/downloads/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/1200_48_1426131682.png" alt="icon" width="40" height="40" />  <span class="label">福昕阅读</span></a></div>
-						<div class="iPreview" align="center"><a href="https://wwa.lanzoui.com/iFNHEpx4w2b" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/27087_48_1615272555.png" alt="icon" width="40" height="40" />  <span class="label">电脑管家</span></a></div>
-						<div class="iPreview" align="center"><a href="http://www.freewb.org/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/214_48.png" alt="icon" width="40" height="40" />  <span class="label">极点五笔</span></a></div>
-						<div class="iPreview" align="center"><a href="https://wubi.sogou.com/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/202_48_1601345915.png" alt="icon" width="40" height="40" />  <span class="label">搜狗五笔</span></a></div>
-						<div class="iPreview" align="center"><a href="https://browser.qq.com/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/351_48_1390531994.png" alt="icon" width="40" height="40" />  <span class="label">QQ浏览器</span></a></div>						
-						<div class="iPreview" align="center"><a href="https://work.weixin.qq.com/#indexDownload" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/22554_48_1591253397.png" alt="icon" width="40" height="40" />  <span class="label">企业微信</span></a></div>
-						<div class="iPreview" align="center"><a href="https://office.qq.com/download.html" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/23258_48_1585706547.png" alt="icon" width="40" height="40" />  <span class="label">TIM</span></a></div>
-					
-						<div class="iPreview" align="center"><a href="https://work.taobao.com/download.html" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/11135_48_1513045399.png" alt="icon" width="40" height="40" />  <span class="label">千牛</span></a></div>
-						<div class="iPreview" align="center"><a href="https://pages.tmall.com/wow/qnww/act/index" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/1855_48_1386734611.png" alt="icon" width="40" height="40" />  <span class="label">阿里旺旺</span></a></div>
-						<div class="iPreview" align="center"><a href="https://page.dingtalk.com/wow/z/dingtalk/default/dddownload-index" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/26980_48_1610695420.png" alt="icon" width="40" height="40" />  <span class="label">钉钉</span></a></div>
-						<div class="iPreview" align="center"><a href="http://pan.baidu.com/download" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/56606_48_1551408704.png" alt="icon" width="40" height="40" />  <span class="label">百度网盘</span></a></div>
-						<div class="iPreview" align="center"><a href="http://www.feiq18.com/" target="_blank">
-						<img src="feiqiu.png" alt="icon" width="40" height="40" />  <span class="label">飞秋</span></a></div>
-						<div class="iPreview" align="center"><a href="https://www.huorong.cn/" target="_blank">
-						<img src="https://bbs.huorong.cn/data/attachment/common/09/common_59_icon.png" alt="icon" width="40" height="40"  />  <span class="label">火绒</span></a></div>
-						<div class="iPreview" align="center"><a href="https://browser.360.cn/se/" target="_blank">
-						<img src="https://p4.ssl.qhimg.com/t01d2f6ee87646ab99f.png" alt="icon" width="40" height="40"/>  <span class="label">安全浏览器</span></a></div>
-												<div class="iPreview" align="center"><a href="http://browser.360.cn/ee/" target="_blank">
-						<img src="https://p1.ssl.qhimg.com/t01295f3bb119d3e1c2.png" alt="icon" width="40" height="40"/>  <span class="label">360极速</span></a></div>
-						<div class="iPreview" align="center"><a href="https://yzy.gdzwfw.gov.cn/download.html" target="_blank">
-						<img src="Images/1/yzy.png" alt="icon" width="40" height="40"/>  <span class="label">粤政易</span></a></div>
-						<div class="iPreview" align="center"><a href="https://www.xunlei.com/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/22748_48_1608172535.png" alt="icon" width="40" height="40"/>  <span class="label">迅雷</span></a></div>
-						<div class="iPreview" align="center"><a href="https://ie.sogou.com/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/22127_48_1445490075.png" alt="icon" width="40" height="40"/>  <span class="label">搜狗浏览器</span></a></div>
-						<div class="iPreview" align="center"><a href="https://www.firefox.com.cn/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/2867_48_1571796527.png" alt="icon" width="40" height="40"/>  <span class="label">火狐浏览器</span></a></div>
-						<div class="iPreview" align="center"><a href="https://www.i4.cn/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/120169_48_1489369971.png" alt="icon" width="40" height="40"/>  <span class="label">爱思助手</span></a></div>
-						<div class="iPreview" align="center"><a href="https://www.wps.cn/product/kingsoftpdf/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/23028_48_1505294643.png" alt="icon" width="40" height="40"/>  <span class="label">金山PDF</span></a></div>
-						<div class="iPreview" align="center"><a href="https://www.flash.cn/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/26476_48_1592362774.png" alt="icon" width="40" height="40"/>  <span class="label">Flash</span></a></div>
-						<div class="iPreview" align="center"><a href="https://get.adobe.com/cn/reader/?promoid=KSWLH" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/1201_48.png" alt="icon" width="40" height="40"/>  <span class="label">AdbeRdr</span></a></div>
-						<div class="iPreview" align="center"><a href="https://dm.weishi.360.cn/home.html?from=homepage" target="_blank">
-						<img src="https://p1.ssl.qhimg.com/t01142a5003c283acb5.png" alt="icon" width="40" height="40"/>  <span class="label">360驱动</span></a></div>
-						<div class="iPreview" align="center"><a href="http://cad.glodon.com/" target="_blank">
-						<img src="https://pc3.gtimg.com/softmgr/logo/48/17578_48_1402998624.png" alt="icon" width="40" height="40"/>  <span class="label">CAD看图</span></a></div>
-						<div class="iPreview" align="center"><a href="https://support.dahuatech.com/tools/software" target="_blank">
-						<img src="http://2ot.cn/Images/pss.png" alt="icon" width="40" height="40"/>  <span class="label">PSS</span></a></div>
-						<div class="iPreview" align="center"><a href="https://www.hikvision.com/cn/support/Downloads/Desktop-Application/HikvisionTools/" target="_blank">
-						<img src="http://2ot.cn/Images/sadp.jpg" alt="icon" width="40" height="40"/>  <span class="label">SADP</span></a></div>
-						
-					</div>
-						</div>
-						
-						
-						<div id="table_wTabs-2">
-							<div class="widget_contents iphO">
-						<div class="iPreview"><a href="https://wwa.lanzoui.com/b00zv78he" target="_blank"><span class="label">装机</span></a></div>
-						<div class="iPreview"><a href="https://cn.uniview.com/Service/Service_Training/Download/Client/201502/791607_194214_0.htm" target="_blank"><span class="label">EZTools</span></a></div>
-					</div>
-						</div>
-						</div>
-					
-				</div>
-				
 			
-				<!-- Separator -->
-				<div class="g_12 separator"><span></span></div>
-				
-<div class="g_12">
-					<div class="widget_header">
-						<h4 class="widget_header_title wwIcon i_16_icons">一些网站</h4>
-					</div>
-					<div class="widget_contents iphO">
-						<div class="iPreview"><a href="https://github.com/" target="_blank"><span class="label">GitHub</span></a></div>
-						<div class="iPreview"><a href="https://git-scm.com/downloads" target="_blank"><span class="label">Git</span></a></div>
-						<div class="iPreview"><a href="https://www.52pojie.cn/" target="_blank"><span class="label">吾爱破解</span></a></div>
-						<div class="iPreview"><a href="https://www.drvsky.com/" target="_blank"><span class="label">驱动天空</span></a></div>
-						<div class="iPreview"><a href="https://www.zmmap.com/" target="_blank"><span class="label">芝麻导航</span></a></div>
-						<div class="iPreview"><a href="https://www.bt.cn/" target="_blank"><span class="label">宝塔</span></a></div>
-					</div>
-				</div>
+                        
+            	            
+            <div class="shortcut" onClick="Win10.openUrl('./cloud','<img class=\'icon\' src=\'./img/icons/yunpan.ico\'/>My Cloud')">
+                <img class="icon" src="./img/icons/yunpan.ico"/>
+                <div class="title">Cloud</div>
+            </div>   	 	           
+			<div class="shortcut" onClick="window.open('https://my.zerotier.com/network/159924d6301da6c3','<img class=\'icon\' src=\'./img/icons/imageres_5323.ico\'/>Thunder Remote')">
+                <img class="icon" src="./img/icons/imageres_5323.ico"/>
+                <div class="title">Zerotier</div>
+            </div>	 
+            
+<div class="shortcut" onClick="window.open('http://72e.net/','<img class=\'icon\' src=\'./img/icons/imageres_5323.ico\'/>Thunder Remote')">
+                <img class="icon" src="./img/icons/imageres_5323.ico"/>
+                <div class="title">云指</div>
+            </div>	  
 
+			<div class="shortcut" onClick="window.open('https://www.aliyun.com/','<img class=\'icon\' src=\'./img/icons/imageres_73.ico\'/>Thunder Remote')">
+                <img class="icon" src="./img/icons/imageres_73.ico"/>
+                <div class="title">阿里云</div>
+            </div>
+        <div id="win10-desktop-scene"></div>
+    </div>
+    <div id="win10-menu" class="hidden">
+        <div class="list win10-menu-hidden animated animated-slideOutLeft">
+            <div class="item" onClick="Win10.aboutUs()"><i class="purple icon fa fa-info-circle fa-fw"></i>About Me</div>
+            <div class="item" onClick="layer.open({
+                title:'Support Me',
+                type: 1,
+                area:'300px',
+                offset:'50px',
+                shadeClose:true,
+                content: '<img width=\'300\' src=\'./img/presentation/donation.png\' />'
+            })"><i class="green icon fa fa-thumbs-up fa-fw"></i>Donation</div>
+            <div class="item" onClick=" Win10.exit();"><i class="black icon fa fa-power-off fa-fw"></i>Shut Down</div>
+        </div>
+        <div class="blocks">
+            <div class="menu_group">
+                <div class="title">
+                    Application
+                </div>
+                <div loc="1,1" size="4,4" class="block">
+                    <div class="content blue cover" style="font-size: 40px;line-height: 36px;text-align: center">
+                        </br><i class="fa fa-cloud fa-fw"></i> </br>Weather
+                    </div>
+                    <div class="content detail" style="background-color: rgb(46,147,217)">
+                        <iframe src="//www.seniverse.com/weather/weather.aspx?uid=U43DF172E7&cid=CHBJ000000&l=&p=SMART&a=1&u=C&s=13&m=2&x=1&d=1&fc=&bgc=2E93D9&bc=&ti=0&in=0&li=" frameborder="0" scrolling="no" width="200" height="300" allowTransparency="true"></iframe>
+                    </div>
+                </div>
+                <div loc="5,1" size="2,2" class="block" onClick="win10_forgive_me()">
+                    <div class="content red">
+                        <div style="text-align: center;font-size: 30px;line-height: 44px"><i class="fa fa-bug fa-fw"></i></div>
+                        <div style="text-align: center;font-size: 16px;line-height: 44px">Click Me</div>
+                    </div>
+                </div>
+                <div loc="5,3" size="2,2" class="block">
+                    <div class="content">
+                        <img style="width: 40px;height: 40px;margin: 5px auto;display: block" src="./img/icons/imageres_5100.ico">
+                        <div class="win10-block-content-text">Button</div>
+                    </div>
+                </div>
+                <div loc="1,5" size="6,3" class="block">
+                    <div class="content" style="background: url('./img/presentation/1.png');background-size: auto" onClick="window.open('https://www.9366333.cn:5001')">
+                    </div>
+                </div>
+                <div loc="1,8" size="2,1" class="block">
+                    <div class="content" style="background-color: red" onClick="window.open('http://www.gebi1.com/thread-274093-1-1.html')">
+                        <div class="win10-block-content-text">Gebi1</div>
+                    </div>
+                </div>
+                <div loc="3,8" size="2,1" class="block">
+                    <div class="content" style="background-color: orange" onClick="window.open('http://www.nasyun.com/forum.php?mod=viewthread&tid=30666&page=1&extra=#pid198851')">
+                        <div class="win10-block-content-text">NASyun</div>
+                    </div>
+                </div>  
+                <div loc="5,8" size="2,1" class="block">
+                    <div class="content" style="background-color: purple" onClick="window.open('http://www.22247.cn')">
+                        <div class="win10-block-content-text">Right.com</div>
+                    </div>
+                </div>                  
+            </div>
 
-			</div>		
-		</div>
-	</div>
-	<footer>
-		<div class="wrapper">
-			<span class="copyright">
-				&copy; Copyright &copy; 2021 2OT.CN All rights reserved.
-				
-				<p>声明：本站资源均来自于网络和官方原版，操作系统均为试用，本站不提供激活服务。
-				请在下载完成后再考虑自愿为本站捐助，下载速度与捐助无关。</p>
-			</span>
-
-		</div>
-	</footer>
-<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
-
+            <div class="menu_group">
+                <div class="title">
+                    Drop My Needle.
+                </div>    
+                <div loc="1,1" size="6,8" class="block">
+                    <div class="content red detail" >
+                        <iframe style="margin-top: 1px" frameborder="no" border="0" marginwidth="0" marginheight="0" width=264 height=350 src="./Music"></iframe>
+                    </div>
+                    <div class="content red cover">
+                        <img width="264" style="position: relative;top: 0px;" src="./img/presentation/player.jpg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="win10-menu-switcher"></div>
+    </div>
+    <div id="win10_command_center" class="hidden_right">
+        <div class="title">
+            <h4 style="float: left">Notification Center </h4>
+            <span id="win10_btn_command_center_clean_all">Clear All</span>
+        </div>
+        <div class="msgs"></div>
+    </div>
+    <div id="win10_task_bar">
+        <div id="win10_btn_group_left" class="btn_group">
+            <div id="win10_btn_win" class="btn"><span class="fa fa-windows"></span></div>
+            <div class="btn" id="win10-btn-browser"><span class="fa fa-internet-explorer"></span></div>
+        </div>
+        <div id="win10_btn_group_middle" class="btn_group"></div>
+        <div id="win10_btn_group_right" class="btn_group">
+            <div class="btn" id="win10_btn_time">
+                <!--0:00<br/>-->
+                <!--1993/8/13-->
+            </div>
+            <div class="btn" id="win10_btn_command"><span id="win10-msg-nof" class="fa fa-comment-o"></span></div>
+            <div class="btn" id="win10_btn_show_desktop"></div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
